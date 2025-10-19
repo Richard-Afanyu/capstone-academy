@@ -1,0 +1,19 @@
+import React from "react";
+import { CarouselSpacing } from "./CarouselSpacing";
+
+const Testimonials = () => {
+  return (
+    <div className="mt-[40px]">
+      <h2 className="bigTitle">Read what our students have to say</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique alias
+        mollitia, eaque dignissimos.
+      </p>
+      <div className="mt-[20px]">
+        <CarouselSpacing />
+      </div>
+    </div>
+  );
+};
+
+export default Testimonials;
