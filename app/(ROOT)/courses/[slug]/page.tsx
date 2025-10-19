@@ -1,6 +1,4 @@
 import React from "react";
-import { CoursesData } from "@/dummy";
-import { CourseType } from "@/types";
 import QuestionSection from "@/components/QuestionSection";
 import { Smile } from "lucide-react";
 import { Button } from "@/components/ui/button";

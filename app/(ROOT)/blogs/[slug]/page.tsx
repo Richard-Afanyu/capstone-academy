@@ -1,10 +1,8 @@
 import React from "react";
-import { blogs } from "@/dummy";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getBlogsBySlug } from "@/sanity/lib/actions/getFunctions";
-import markdownit from "markdown-it";
 import { md } from "@/lib/markdown";
 
 type BlogType = {

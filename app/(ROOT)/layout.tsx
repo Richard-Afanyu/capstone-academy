@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Side from "@/components/Side";
 import React from "react";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

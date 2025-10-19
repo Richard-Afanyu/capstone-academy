@@ -1,5 +1,4 @@
 import React from "react";
-import { CoursesData } from "@/dummy";
 import DisplayCourses from "@/components/DisplayCourses";
 import { getAllCourses } from "@/sanity/lib/actions/getFunctions";
 

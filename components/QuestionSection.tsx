@@ -21,7 +21,6 @@ const QuestionSection = () => {
     register,
     handleSubmit,
     formState: { isSubmitting, errors },
-    setError,
   } = useForm<FormType>({
     resolver: zodResolver(questionSchema),
   });
