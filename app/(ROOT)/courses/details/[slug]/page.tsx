@@ -45,7 +45,7 @@ const CourseDetailsPage = async ({
         <h3 className="smallTitle">Course Rating: {actual.rating}</h3>
       </div>
 
-      <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4 flex items-center gap-4">
+      <div className="md:right-4 flex items-center gap-4 mt-[40px]">
         <ClerkLoaded>
           <SignedIn>
             <Button>
@@ -63,9 +63,6 @@ const CourseDetailsPage = async ({
             </Button>
           </SignedOut>
         </ClerkLoaded>
-        <Button>
-          <Link href={`/courses/${slug}`}>Enroll Now</Link>
-        </Button>
         <Button>
           <Link href="/courses">Go back</Link>
         </Button>
