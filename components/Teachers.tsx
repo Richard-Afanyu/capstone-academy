@@ -16,32 +16,28 @@ const Teachers = () => {
       id: "1",
       teacherName: "Richard Afanyu",
       image: "/teachers/friend1.jpg",
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-        dolore omnis quisquam aliquid maiores magnam ratione et doloribus nihil`,
+      desc: `Professional web developer`,
       rating: 4,
     },
     {
       id: "2",
       teacherName: "Richard Afanyu",
       image: "/teachers/friend1.jpg",
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-        dolore omnis quisquam aliquid maiores magnam ratione et doloribus nihil`,
+      desc: `Professional app developer`,
       rating: 4,
     },
     {
       id: "3",
       teacherName: "Richard Afanyu",
       image: "/teachers/friend1.jpg",
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-        dolore omnis quisquam aliquid maiores magnam ratione et doloribus nihil`,
+      desc: `Company co CEO and manager`,
       rating: 4,
     },
     {
       id: "4",
       teacherName: "Richard Afanyu",
       image: "/teachers/friend1.jpg",
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-        dolore omnis quisquam aliquid maiores magnam ratione et doloribus nihil`,
+      desc: `Dev Ops operator`,
       rating: 4,
     },
   ];
@@ -49,10 +45,9 @@ const Teachers = () => {
     <div className="mt-[40px]">
       <h2 className="bigTitle">Our Elite Teaching Staff</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-        dolore omnis quisquam aliquid maiores magnam ratione et doloribus nihil
-        saepe repudiandae, inventore aut ea ab cum alias mollitia, eaque
-        dignissimos.
+        Here is our team of experts, each proficiant in their domains from web
+        development, application development, to devops, and even general
+        management.
       </p>
 
       {/* all teachers section */}

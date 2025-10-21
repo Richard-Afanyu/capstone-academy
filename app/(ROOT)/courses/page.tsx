@@ -10,9 +10,9 @@ const CoursesPage = async () => {
     <div className="mt-[20px]">
       <h2 className="bigTitle">Our Courses</h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem omnis
-        incidunt voluptatem perspiciatis dolorem natus nihil eveniet laboriosam
-        officiis. Nam?
+        Here, our library of carefully selected courses partaining to the
+        following categories - web development, app development, devops, and
+        software management.
       </p>
 
       {/* display courses section */}

@@ -14,15 +14,23 @@ type BlogType = {
   createdAt: string;
 };
 
-const SingleBlogPage = async ({ params }: { params: { slug: string } }) => {
-  const pageParams = await params;
-  const slug = pageParams.slug;
+const SingleBlogPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const { slug } = await params;
   const actual: BlogType = await getBlogsBySlug(slug);
   // const md = markdownit();
   const parsedContent = md.render(actual.blog || "");
 
   if (!actual) {
-    return <div>Blog not found</div>;
+    return (
+      <div>
+        <h2>Blog not found!</h2>
+        <Link href="/blogs">Return to blogs</Link>
+      </div>
+    );
   }
   return (
     <div className="mt-[20px] relative">

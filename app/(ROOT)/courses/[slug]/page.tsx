@@ -4,11 +4,24 @@ import { Smile } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import YouTubePlayer from "@/components/VideoPlayer";
 import { getCourseBySlug } from "@/sanity/lib/actions/getFunctions";
+import Link from "next/link";
 
-const EnrollPage = async ({ params }: { params: { slug: string } }) => {
-  const pageParams = await params;
-  const slug = pageParams.slug;
+const EnrollPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const { slug } = await params;
   const actual = await getCourseBySlug(slug);
+
+  if (!actual) {
+    return (
+      <div>
+        <h2>Sorry! this blog post does not exist</h2>
+        <Link href="/courses">Return to courses</Link>
+      </div>
+    );
+  }
   return (
     <div className="mt-[20px] gap-[40px] grid grid-cols-1 md:grid-cols-5 xl:grid-cols-7">
       {/* left section */}
@@ -35,9 +48,8 @@ const EnrollPage = async ({ params }: { params: { slug: string } }) => {
       <div className="md:col-span-2 xl:col-span-3">
         <h2 className="bigTitle">Have any questions?</h2>
         <p className="text-muted-foreground">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-          dolorem, numquam sapiente itaque tempore quae qui fugiat autem rem
-          hic.
+          Feel free to send us any questions you may have during your learning
+          process and we will be sure to get back to you soonest.
         </p>
 
         {/* question form */}
@@ -49,9 +61,9 @@ const EnrollPage = async ({ params }: { params: { slug: string } }) => {
         <div className="flex flex-col gap-4 mt-[40px]">
           <h2 className="bigTitle">Finished?</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
-            consectetur mollitia sapiente quibusdam officiis impedit iste facere
-            est cupiditate adipisci?
+            All done? Mark this course as completed to keep statistics of your
+            learning progress with us. You can find your total completed courses
+            on your account profile
           </p>
           <Button>
             Finished <Smile />

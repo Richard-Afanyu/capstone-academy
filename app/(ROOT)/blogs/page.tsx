@@ -17,14 +17,22 @@ type BlogType = {
 const BlogsPage = async () => {
   // const Blogs: BlogType[] = blogs;
   const Blogs: BlogType[] = await getAllBlogs();
+  if (!Blogs) {
+    return (
+      <div>
+        <h2>Sorry, could not fetch blogs at the moment</h2>
+        <Link href="/">
+          Please return to and check your internet connection
+        </Link>
+      </div>
+    );
+  }
   return (
     <div className="mt-[20px]">
       <h2 className="bigTitle">Our Blogs</h2>
       <p className="text-muted-foreground">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi numquam
-        provident magni repellendus deleniti, consequuntur vitae ratione eius
-        magnam a perferendis ut vel molestias ullam sit, placeat, accusamus
-        laborum sunt?
+        Stay up-to-date with current technological trends with our masterfully
+        written blogs. These are short and simple and yet very informative.
       </p>
 
       {/* display blogs section */}

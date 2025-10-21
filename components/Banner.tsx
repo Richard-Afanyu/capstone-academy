@@ -11,9 +11,9 @@ const Banner = () => {
           Zero to Hero completely From The Comport Of Your Home
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ab sit
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ab sit
-          omnis autem aut quaerat ut repellat fugit blanditiis at.
+          Gain access to carefully selected courses by industry professionals.
+          Learn and ask questions and get your answers delivered to your email
+          inbox. Capstone academy makes online learning easy and simplistic.
         </p>
         {/* action buttons */}
         <div className="flex gap-6 items-center">

@@ -19,22 +19,19 @@ const AboutPage = () => {
       <div className="w-full">
         <div>
           <h2 className="bigTitle">Capstone Academy</h2>
-          <p className="text-muted-foreground text-[14px] py-2">{`Nothing to see here :D`}</p>
           <p className="text-[14px]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            veniam consequuntur soluta molestias inventore, delectus
-            consequatur, iure nihil cum vero eligendi quaerat quo veritatis
-            quibusdam ex. Animi incidunt laudantium, vitae cumque ipsam soluta
-            quo doloribus ab perspiciatis perferendis maxime vero dignissimos
-            nemo ad et qui? Minima et deserunt ab ratione?
+            Capstone academy is a free learning platform built by Richard Afanyu
+            for the purpose of providing free structured online learning for
+            those seeking to learn skills in the world of technology. This site
+            is built with love and passion for learning and progress.
           </p>
         </div>
         <div className="mt-[20px]">
           <h2 className="smallTitle">Our Mission</h2>
           <p className="para">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati,
-            exercitationem quae? Velit dolorum, quia molestiae excepturi amet
-            quibusdam soluta ratione?
+            Our mission is to provide free learning to all those seeking to
+            learn skills in the field of technology from the comfort of their
+            home while eliminating the destractions other platforms allow.
           </p>
         </div>
         <div className="mt-[20px]">
@@ -42,23 +39,20 @@ const AboutPage = () => {
           <ul className="flex flex-col gap-[10px]">
             <li className="flex items-center gap-2">
               <Check />
+              <span className="para">We cherish promote online learning.</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Check />
               <span className="para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusantium, officiis!
+                This platform will be free and continue to be free as we believe
+                everyone should have access to information.
               </span>
             </li>
             <li className="flex items-center gap-2">
               <Check />
               <span className="para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusantium, officiis!
-              </span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Check />
-              <span className="para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusantium, officiis!
+                No personal information will be disclosed to third party
+                applications as security is held at high regard with us.
               </span>
             </li>
           </ul>

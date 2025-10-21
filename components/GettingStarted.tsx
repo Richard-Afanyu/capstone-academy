@@ -5,25 +5,26 @@ const GettingStarted = () => {
     {
       id: "1",
       title: "Create a free account",
-      desc: "dolor sit amet, consectetur adipisicing elit. Nisi ab sit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ab sit omnis autem aut quaerat ut repellat fugit blanditiis at",
+      desc: "Create a free account on Capstone Academy with just your google account or email and password - simple and fast",
     },
     {
       id: "2",
       title: "Enroll in a course",
-      desc: "dolor sit amet, consectetur adipisicing elit. Nisi ab sit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ab sit omnis autem aut quaerat ut repellat fugit blanditiis at",
+      desc: "Choose from our library of selected courses for your desired category and get started today.",
     },
     {
       id: "3",
       title: "Gain new skills",
-      desc: "dolor sit amet, consectetur adipisicing elit. Nisi ab sit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ab sit omnis autem aut quaerat ut repellat fugit blanditiis at",
+      desc: "Watch, Learn and ask questions to gain the skills you need to build your first software product and that dream project in due time.",
     },
   ];
   return (
     <div className="mt-[40px]">
       <h2 className="bigTitle">Our simple process</h2>
       <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem
-        facere sit eligendi qui nulla eaque atque, in minus totam autem.
+        Our learning process is simple and straight forward - Create and
+        account, Enroll in a course of your choosing and gain the necessary
+        skills you desire.
       </p>
       <div className="grid grid-cols-1 mt-[20px] sm:grid-cols-2 md:grid-cols-3 gap-[30px]">
         {info.map((item) => (

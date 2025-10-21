@@ -18,26 +18,22 @@ export function CarouselSpacing() {
     {
       id: "1",
       studentName: "Richard Afanyu",
-      review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique alias
-        mollitia, eaque dignissimos.`,
+      review: `Capstone Academy is just greate. I can learn valuable skill without destractions.`,
     },
     {
       id: "2",
       studentName: "Richard Afanyu",
-      review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique alias
-        mollitia, eaque dignissimos.`,
+      review: `I still can not believe all this information is free. We need more platforms like this out there.`,
     },
     {
       id: "3",
       studentName: "Richard Afanyu",
-      review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique alias
-        mollitia, eaque dignissimos.`,
+      review: `I like the simple design and teaching style of Capstone Academy.`,
     },
     {
       id: "4",
       studentName: "Richard Afanyu",
-      review: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique alias
-        mollitia, eaque dignissimos.`,
+      review: `Nothing is better than learning valuable skills at your own convinient time and place.`,
     },
   ];
   return (

@@ -32,12 +32,18 @@ function ContactPage() {
               <span className="font-semibold">Send me a DM:</span>
               <div className=" flex gap-2 ">
                 <Button className="">
-                  <Link href="/" target="_black">
+                  <Link
+                    href="https://web.facebook.com/profile.php?id=61579941569021"
+                    target="_black"
+                  >
                     <Facebook className="" />
                   </Link>
                 </Button>
                 <Button>
-                  <Link href="/" target="_black">
+                  <Link
+                    href="https://www.instagram.com/drrcam/"
+                    target="_black"
+                  >
                     <Instagram className="" />
                   </Link>
                 </Button>
@@ -47,7 +53,10 @@ function ContactPage() {
                   </Link>
                 </Button>
                 <Button>
-                  <Link href="/" target="_black">
+                  <Link
+                    href="https://www.linkedin.com/in/richard-afanyu-9b2069324/"
+                    target="_black"
+                  >
                     <Linkedin className="" />
                   </Link>
                 </Button>
