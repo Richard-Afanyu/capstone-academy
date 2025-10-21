@@ -19,7 +19,7 @@ const SingleBlogPage = async ({
 }: {
   params: Promise<{ slug: string }>;
 }) => {
-  const { slug } = await params;
+  const slug = (await params).slug;
   const actual: BlogType = await getBlogsBySlug(slug);
   // const md = markdownit();
   const parsedContent = md.render(actual.blog || "");

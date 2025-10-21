@@ -11,7 +11,7 @@ const EnrollPage = async ({
 }: {
   params: Promise<{ slug: string }>;
 }) => {
-  const { slug } = await params;
+  const slug = (await params).slug;
   const actual = await getCourseBySlug(slug);
 
   if (!actual) {

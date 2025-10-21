@@ -6,7 +6,11 @@ import { getCourseBySlug } from "@/sanity/lib/actions/getFunctions";
 import { ClerkLoaded, SignedOut, SignedIn } from "@clerk/nextjs";
 import { Briefcase } from "lucide-react";
 
-const CourseDetailsPage = async ({ params }: { params: { slug: string } }) => {
+const CourseDetailsPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
   const slug = (await params).slug;
   const actual = await getCourseBySlug(slug);
 
