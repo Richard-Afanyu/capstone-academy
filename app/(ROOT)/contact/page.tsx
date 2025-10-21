@@ -33,7 +33,7 @@ function ContactPage() {
               <div className=" flex gap-2 ">
                 <Button className="">
                   <Link
-                    href="https://web.facebook.com/profile.php?id=61579941569021"
+                    href="https://web.facebook.com/profile.php?id=100079501246618"
                     target="_black"
                   >
                     <Facebook className="" />
@@ -41,7 +41,7 @@ function ContactPage() {
                 </Button>
                 <Button>
                   <Link
-                    href="https://www.instagram.com/drrcam/"
+                    href="https://www.instagram.com/juiceyoung89/"
                     target="_black"
                   >
                     <Instagram className="" />
