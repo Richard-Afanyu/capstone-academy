@@ -16,7 +16,6 @@ export interface LinksType {
 
 const Navbar = () => {
   const { user } = useUser();
-  const isAdmin = true;
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const links = [
     {
@@ -73,12 +72,6 @@ const Navbar = () => {
         </SignedOut>
         <SignedIn>
           <div className="flex items-center gap-6">
-            {isAdmin && (
-              <Link href="/dashboard" className="font-semibold">
-                Dashboard
-              </Link>
-            )}
-
             <Link href="/profile" className="font-semibold">
               Profile
             </Link>
