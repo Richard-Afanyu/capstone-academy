@@ -6,7 +6,8 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Capstone Academy",
+  description: "contact page for the capstone academy website",
 };
 
 function ContactPage() {

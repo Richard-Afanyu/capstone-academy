@@ -1,8 +1,14 @@
 import { getUserInfo } from "@/sanity/lib/actions/getFunctions";
 import { auth } from "@clerk/nextjs/server";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Profile | Capstone Academy",
+  description: "profile page for the capstone academy website",
+};
 
 const ProfilePage = async () => {
   const { userId } = await auth(); // Gets the current session

@@ -1,6 +1,12 @@
 import { Check } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "About | Capstone Academy",
+  description: "about page for the capstone academy website",
+};
 
 const AboutPage = () => {
   return (

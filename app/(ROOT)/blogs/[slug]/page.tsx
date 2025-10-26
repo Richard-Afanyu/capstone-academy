@@ -4,6 +4,38 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getBlogsBySlug } from "@/sanity/lib/actions/getFunctions";
 import { md } from "@/lib/markdown";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const resource = await getBlogsBySlug(slug);
+
+  const title =
+    resource.title + " | Capstone Academy" || "Blog Post | Capstone Academy";
+  const seoDescription = "Information on the latest tech developments";
+
+  return {
+    title,
+    description: seoDescription,
+    other: {
+      "og:title": title,
+      "og:description": seoDescription,
+      "og:image": resource.bannerImage,
+      "twitter:title": title,
+      "twitter:image": resource.bannerImage,
+      "twitter:description": seoDescription,
+    },
+  };
+}
+
+// export const metadata: Metadata = {
+//   title: "Blog Post | Capstone Academy",
+//   description: "single blog page for the capstone academy website",
+// };
 
 type BlogType = {
   slug: { _type: string; current: string };

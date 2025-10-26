@@ -1,6 +1,12 @@
 import React from "react";
 import DisplayCourses from "@/components/DisplayCourses";
 import { getAllCourses } from "@/sanity/lib/actions/getFunctions";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Courses | Capstone Academy",
+  description: "courses page for the capstone academy website",
+};
 
 const CoursesPage = async () => {
   const courses = await getAllCourses();

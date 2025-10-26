@@ -5,6 +5,32 @@ import { getCourseBySlug } from "@/sanity/lib/actions/getFunctions";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const resource = await getCourseBySlug(slug);
+
+  const title =
+    resource.title + " | Capstone Academy" || "Blog Post | Capstone Academy";
+  const seoDescription = "Information on the latest tech developments";
+
+  return {
+    title,
+    description: seoDescription,
+    other: {
+      "og:title": title,
+      "og:description": seoDescription,
+      "og:image": resource.bannerImage,
+      "twitter:title": title,
+      "twitter:image": resource.bannerImage,
+      "twitter:description": seoDescription,
+    },
+  };
+}
+
 const EnrollPage = async ({
   params,
 }: {

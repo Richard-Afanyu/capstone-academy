@@ -4,6 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { getAllBlogs } from "@/sanity/lib/actions/getFunctions";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blogs | Capstone Academy",
+  description: "blogs page for the capstone academy website",
+};
 
 type BlogType = {
   slug: { _type: string; current: string };
