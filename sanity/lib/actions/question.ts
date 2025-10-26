@@ -1,7 +1,7 @@
 "use server";
 
-import { client } from "../client";
-// import { sanity } from "../sanity.server";
+// import { client } from "../client";
+import { sanity } from "../sanity.server";
 
 interface CreateQuestion {
   chapter: string;
@@ -18,16 +18,27 @@ export async function createQuestion({
   courseId,
   createdAt = new Date().toISOString(),
 }: CreateQuestion) {
+  if (!userId) {
+    throw new Error("User ID is required to create a question");
+  }
+
+  if (!courseId) {
+    throw new Error("Course ID is required to create a question");
+  }
+
   try {
-    await client.create({
+    const result = await sanity.create({
       _type: "question",
       chapter,
       question,
       createdAt,
-      userId: { type: "reference", _ref: userId },
-      courseId: { type: "reference", _ref: courseId },
+      userId: { _type: "reference", _ref: userId },
+      courseId: { _type: "reference", _ref: courseId },
     });
+
+    return { success: true, data: result };
   } catch (error) {
-    console.error(`Failed to submit new question: ${error}`);
+    console.error(`Failed to submit question:`, error);
+    throw error; // Re-throw the error so we can handle it in the component
   }
 }

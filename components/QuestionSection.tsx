@@ -31,11 +31,12 @@ const QuestionSection = ({ courseId }: Props) => {
     resolver: zodResolver(questionSchema),
   });
   const { user } = useUser();
+  console.log("user id:", user?.id);
+  console.log("course id:", courseId);
 
   const onSubmit: SubmitHandler<FormType> = async (data) => {
     try {
       // submit question function
-      console.log(data);
       await createQuestion({
         chapter: data.chapter,
         question: data.question,

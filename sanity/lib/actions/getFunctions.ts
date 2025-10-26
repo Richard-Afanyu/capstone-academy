@@ -1,6 +1,5 @@
 import { auth } from "@clerk/nextjs/server";
 import { sanityFetch } from "../live";
-import { success } from "zod";
 
 export const getUserId = async () => {
   const { userId } = await auth();
@@ -28,7 +27,7 @@ export const getCourseBySlug = async (slug: string) => {
   try {
     const course = await sanityFetch({
       query: `*[_type == "course" && slug.current == $slug][0] {
-      bannerImage, title, slug, description, video, instructor, category, rating, createdAt, duration
+      bannerImage, _id, title, slug, description, video, instructor, category, rating, createdAt, duration
       }`,
       params: { slug },
     });
@@ -82,69 +81,6 @@ export const getAllUsers = async () => {
   } catch (error) {
     console.error(`failed to fetch all users: ${error}`);
     return [];
-  }
-};
-
-// get user completed courses
-export const getUserCompletedCourses = async (userId: string) => {
-  try {
-    const completedCourses = await sanityFetch({
-      query: `*[_type == "completed" && userId._ref == $userId] {
-      courseId
-      }`,
-      params: { userId },
-    });
-    return completedCourses?.data || [];
-  } catch (error) {
-    console.error(`failed to fetch all user completed courses: ${error}`);
-    return [];
-  }
-};
-
-// get user enrolled courses
-export const getUserEnrolledCourses = async (userId: string) => {
-  try {
-    const enrolledCourses = await sanityFetch({
-      query: `*[_type == "enrolled" && userId._ref == $userId] {
-      courseId
-      }`,
-      params: { userId },
-    });
-    return enrolledCourses?.data || [];
-  } catch (error) {
-    console.error(`failed to fetch all user enrolled courses: ${error}`);
-    return [];
-  }
-};
-
-// get course enrollers
-export const getCourseEnrollers = async (courseId: string) => {
-  try {
-    const courseEnrollers = await sanityFetch({
-      query: `*[_type == "enrolled" && courseId._ref == $courseId] | order(createdAt desc) {
-      courseId
-      }`,
-      params: { courseId },
-    });
-    return courseEnrollers?.data || [];
-  } catch (error) {
-    console.error(`failed to fetch all course enrollers: ${error}`);
-    return [];
-  }
-};
-
-// get course completers
-export const getCourseCompleters = async (courseId: string) => {
-  try {
-    const { userId } = await auth();
-    if (!userId) return "";
-    const completedUser = await sanityFetch({
-      query: `*[_type == "completed" && userId == $userId && courseId == &courseId][0]`,
-      params: { userId, courseId },
-    });
-    return completedUser?.data || {};
-  } catch (error) {
-    throw new Error(`Failed to get course completers: ${error}`);
   }
 };
 

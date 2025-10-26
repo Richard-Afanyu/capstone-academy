@@ -22,7 +22,7 @@ export const questionType = defineType({
       to: [{ type: "user" }],
     }),
     defineField({
-      name: "couseId",
+      name: "courseId",
       title: "Course in concern",
       type: "reference",
       to: [{ type: "course" }],
