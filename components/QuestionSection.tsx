@@ -35,7 +35,7 @@ const QuestionSection = ({ courseId }: Props) => {
   const onSubmit: SubmitHandler<FormType> = async (data) => {
     try {
       // submit question function
-      console.log(`SUBMITTED DATA: ${data}`);
+      console.log(data);
       await createQuestion({
         chapter: data.chapter,
         question: data.question,
