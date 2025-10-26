@@ -8,6 +8,8 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
+import { createQuestion } from "@/sanity/lib/actions/question";
+import { useUser } from "@clerk/nextjs";
 
 const questionSchema = z.object({
   chapter: z.string().min(4),
@@ -16,7 +18,11 @@ const questionSchema = z.object({
 
 type FormType = z.infer<typeof questionSchema>;
 
-const QuestionSection = () => {
+type Props = {
+  courseId: string;
+};
+
+const QuestionSection = ({ courseId }: Props) => {
   const {
     register,
     handleSubmit,
@@ -24,13 +30,33 @@ const QuestionSection = () => {
   } = useForm<FormType>({
     resolver: zodResolver(questionSchema),
   });
+  const { user } = useUser();
 
-  const onSubmit: SubmitHandler<FormType> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormType> = async (data) => {
+    try {
+      // submit question function
+      console.log(`SUBMITTED DATA: ${data}`);
+      await createQuestion({
+        chapter: data.chapter,
+        question: data.question,
+        userId: user?.id,
+        courseId: courseId,
+        createdAt: new Date().toISOString(),
+      });
+      window.alert("Your question has been sumitted sucessfully");
+      const form = document.querySelector("form") as HTMLFormElement;
+      if (form) {
+        form.reset();
+      }
+    } catch (error) {
+      window.alert("Something went wrong");
+      throw new Error(`Failed to submit question: ${error}`);
+    }
+  };
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      action="/"
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-4 form"
     >
       <div className="flex flex-col gap-2">
         <Label htmlFor="chapter">Chaper:</Label>
@@ -48,7 +74,7 @@ const QuestionSection = () => {
       <div className="flex flex-col gap-2">
         <Label htmlFor="question">Question:</Label>
         <Textarea
-          placeholder="Please enter the chapter..."
+          placeholder="Please enter the question..."
           id="question"
           {...register("question")}
         />

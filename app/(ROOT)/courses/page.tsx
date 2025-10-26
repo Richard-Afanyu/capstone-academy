@@ -3,9 +3,7 @@ import DisplayCourses from "@/components/DisplayCourses";
 import { getAllCourses } from "@/sanity/lib/actions/getFunctions";
 
 const CoursesPage = async () => {
-  // const courses: CoursesType = CoursesData;
   const courses = await getAllCourses();
-  console.log(courses);
   return (
     <div className="mt-[20px]">
       <h2 className="bigTitle">Our Courses</h2>

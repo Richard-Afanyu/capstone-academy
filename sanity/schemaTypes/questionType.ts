@@ -15,6 +15,24 @@ export const questionType = defineType({
       title: "Question",
       type: "string",
     }),
+    defineField({
+      name: "userId",
+      title: "User who sent the question",
+      type: "reference",
+      to: [{ type: "user" }],
+    }),
+    defineField({
+      name: "couseId",
+      title: "Course in concern",
+      type: "reference",
+      to: [{ type: "course" }],
+    }),
+    defineField({
+      name: "createdAt",
+      type: "datetime",
+      title: "Created At",
+      initialValue: new Date().toISOString(),
+    }),
   ],
 
   preview: {

@@ -4,7 +4,7 @@ import React from "react";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+    <div suppressHydrationWarning>
       <Navbar />
       {/* <div className="flex">
         <div className="w-[300px] hidden md:block">

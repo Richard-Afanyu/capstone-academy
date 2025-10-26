@@ -38,6 +38,12 @@ export async function updateUser(user: clerkUserData) {
 }
 
 export async function deleteUser(userId: string | undefined) {
-  const deletedUser = await sanity.delete(`${userId}`);
-  return deletedUser;
+  if (!userId) throw new Error("User ID is required");
+  try {
+    const deletedUser = await sanity.delete(`${userId}`);
+    return deletedUser;
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    throw error;
+  }
 }

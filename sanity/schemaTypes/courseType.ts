@@ -36,7 +36,7 @@ export const courseType = defineType({
     }),
     defineField({
       name: "video",
-      title: "Course Video Link",
+      title: "Course Video Link Id",
       type: "string",
     }),
     defineField({

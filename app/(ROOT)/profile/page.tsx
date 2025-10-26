@@ -1,18 +1,19 @@
-import DialogBox from "@/components/DialogBox";
+import { getUserInfo } from "@/sanity/lib/actions/getFunctions";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ProfilePage = async () => {
-  const user = {
-    firstName: "Richard",
-    lastName: "Afanyu",
-    imageUrl: "/logo.png",
-    email: "richardafanyu5@gmail.com",
-    createdAt: "14/10/2025",
-    completed: 10,
-    enrolled: 12,
-  };
+  const userInfo = await getUserInfo();
 
+  if (!userInfo) {
+    return (
+      <div>
+        <h2>This user does not exist!</h2>
+        <Link href="/sign-up">Sign up</Link>
+      </div>
+    );
+  }
   return (
     <div className="mt-[20px]">
       <h2 className="bigTitle">Profile</h2>
@@ -21,10 +22,10 @@ const ProfilePage = async () => {
       <div className="grid grid-cols-1 md:grid-cols-5 mt-[20px] gap-[20px]">
         {/* left section */}
         <div className="md:col-span-2 h-fit border border-border rounded-[5px] py-4 px-4 flex flex-col justify-center items-center">
-          <h2 className="sectionTitle">{`${user?.firstName} ${user?.lastName}`}</h2>
+          <h2 className="smallTitle">{`${userInfo?.firstName} ${userInfo?.lastName}`}</h2>
           <div className="relative w-[280px] h-[280px] mt-[10px]">
             <Image
-              src={user?.imageUrl}
+              src={userInfo?.imageUrl}
               alt="profile image"
               fill
               className="rounded-full object-fit"
@@ -44,25 +45,7 @@ const ProfilePage = async () => {
             <div>
               <p className="font-semibold">Email</p>
               <div className="bg-card border border-border py-2 px-2 rounded-[5px]">
-                {user?.email}
-              </div>
-              <span className="text-muted-foreground text-[12px]">{`This is your Google account's email`}</span>
-            </div>
-
-            {/* enrolled */}
-            <div>
-              <p className="font-semibold">Courses Enrolled</p>
-              <div className="bg-card border border-border py-2 px-2 rounded-[5px]">
-                {user?.enrolled}
-              </div>
-              <span className="text-muted-foreground text-[12px]">{`This is your Google account's email`}</span>
-            </div>
-
-            {/* completed */}
-            <div>
-              <p className="font-semibold">Courses Completed</p>
-              <div className="bg-card border border-border py-2 px-2 rounded-[5px]">
-                {user?.completed}
+                {userInfo?.email}
               </div>
               <span className="text-muted-foreground text-[12px]">{`This is your Google account's email`}</span>
             </div>
@@ -71,22 +54,9 @@ const ProfilePage = async () => {
             <div className="">
               <p className="font-semibold">Date Joined</p>
               <div className="bg-card border border-border py-2 px-2 rounded-[5px]">
-                {user?.createdAt?.slice(0, 10) || "sign-up date"}
+                {userInfo?.createdAt?.slice(0, 10) || "sign-up date"}
               </div>
               <span className="text-muted-foreground text-[12px]">{`The date you joined dataInsights`}</span>
-            </div>
-
-            {/* delete account */}
-            <div className="mt-[20px]">
-              <p className="font-semibold">Delete Account</p>
-              <span className="text-[12px] text-red-500">
-                Warning. This action my lead to serious consiquences if not
-                considered
-              </span>
-              <div className="flex flex-col gap-2 mt-[10px]">
-                <DialogBox />
-                <span className="text-muted-foreground text-[12px]">{`Delete your dataInsights account and all your assets`}</span>
-              </div>
             </div>
           </div>
         </div>

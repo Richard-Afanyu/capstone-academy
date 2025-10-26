@@ -1,7 +1,6 @@
 "use server";
 
 import { client } from "../client";
-// import { sanity } from "../sanity.server";
 
 interface CreateEnrolled {
   userId: string;
