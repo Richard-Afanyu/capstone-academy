@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Linkedin, Mail, Phone, X } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,11 +45,6 @@ function ContactPage() {
                     target="_black"
                   >
                     <Instagram className="" />
-                  </Link>
-                </Button>
-                <Button>
-                  <Link href="/" target="_black">
-                    <X className="" />
                   </Link>
                 </Button>
                 <Button>
