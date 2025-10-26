@@ -85,9 +85,8 @@ export const getAllUsers = async () => {
 };
 
 // get user information
-export const getUserInfo = async () => {
+export const getUserInfo = async (userId: string) => {
   try {
-    const { userId } = await auth();
     const userInfo = await sanityFetch({
       query: `*[_type == "user" && clerkId == $userId][0] {email, firstName, lastName, imageUrl, createdAt, clerkId}`,
       params: { userId },

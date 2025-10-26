@@ -1,10 +1,14 @@
 import { getUserInfo } from "@/sanity/lib/actions/getFunctions";
+import { currentUser } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const ProfilePage = async () => {
-  const userInfo = await getUserInfo();
+  const { userId } = await auth(); // Gets the current session
+  const userInfo = await getUserInfo(userId || "");
 
   if (!userInfo) {
     return (
